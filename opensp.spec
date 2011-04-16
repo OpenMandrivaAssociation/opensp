@@ -6,7 +6,7 @@
 Summary: The OpenJade Group's SGML and XML parsing tools
 Name: opensp
 Version: 1.5.2
-Release: %mkrel 8
+Release: %mkrel 9
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 License: BSD
 Group: Publishing
@@ -17,6 +17,7 @@ Patch2: opensp-1.5.2-nodeids.patch
 URL: http://openjade.sourceforge.net/
 BuildRequires: xmlto
 BuildRequires: docbook-dtd412-xml
+%rename OpenSP
 
 %description
 This package is a collection of SGML/XML tools called OpenSP. It is a fork from
@@ -87,7 +88,6 @@ test "$RPM_BUILD_ROOT" = "/" || rm -rf "$RPM_BUILD_ROOT"
 %{_bindir}/*
 %{sgmlbase}/%{name}-%{version}/*
 %{_mandir}/man1/*
-
 
 %files -n %{lib_name}
 %defattr(-, root, root)
