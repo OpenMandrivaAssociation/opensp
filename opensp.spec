@@ -1,15 +1,16 @@
 %define lib_major 5
 %define lib_name %mklibname %{name} %{lib_major}
+%define develname %mklibname -d %name
 %define	sgmlbase %{_datadir}/sgml
 
 Summary: The OpenJade Group's SGML and XML parsing tools
-Name: OpenSP
+Name: opensp
 Version: 1.5.2
-Release: %mkrel 7
+Release: %mkrel 8
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 License: BSD
 Group: Publishing
-Source: http://download.sourceforge.net/openjade/%{name}-%{version}.tar.bz2
+Source: http://download.sourceforge.net/openjade/OpenSP-%{version}.tar.bz2
 Patch0: OpenSP-1.5-prefer-catalog-entries.patch
 Patch1: opensp-1.5.2-multilib.patch
 Patch2: opensp-1.5.2-nodeids.patch
@@ -25,26 +26,29 @@ SGML and XML files.
 %package -n %{lib_name}
 Summary: Runtime library for the OpenJade group's SP suite
 Group: System/Libraries
+Obsoletes: %{_lib}OpenSP5 < 1.5.2-8
 
 %description -n %{lib_name}
 This is the SP suite's shared library runtime support.  This C++
 library contains entity management functions, parsing functions, and
 other functions useful for SGML/XML/DSSSL development.
 
-%package -n %{lib_name}-devel
+%package -n %{develname}
 Summary: Libraries and include files for developing OpenSP applications
 Group: Development/C
 Requires: %{lib_name} = %{version}
 Provides: lib%{name}-devel = %{version}-%{release}
 Provides: %{name}-devel = %{version}-%{release}
+Provides: OpenSP-devel = %{version}-%{release}
+Obsoletes: %{_lib}OpenSP5-devel < 1.5.2-8
 
-%description -n %{lib_name}-devel
+%description -n %{develname}
 This contains include files and libraries for OpenSP.
 This C++ library contains entity management functions, parsing functions,
 and other functions useful for SGML/XML/DSSSL development.
 
 %prep
-%setup -q
+%setup -qn OpenSP-%{version}
 %patch0 -p1 -b .try_catalogs_first
 %patch1 -p1 -b .multilib
 %patch2 -p1 -b .nodeids
@@ -89,7 +93,7 @@ test "$RPM_BUILD_ROOT" = "/" || rm -rf "$RPM_BUILD_ROOT"
 %defattr(-, root, root)
 %{_libdir}/libosp.so.%{lib_major}*
 
-%files -n %{lib_name}-devel
+%files -n %{develname}
 %defattr(-, root, root)
 %{_libdir}/lib*.so
 %{_libdir}/lib*.a
