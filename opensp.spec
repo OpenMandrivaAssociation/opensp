@@ -63,16 +63,16 @@ and other functions useful for SGML/XML/DSSSL development.
 
 %install
 
-test "$RPM_BUILD_ROOT" = "/" || rm -rf "$RPM_BUILD_ROOT"
+test "%{buildroot}" = "/" || rm -rf "%{buildroot}"
 %makeinstall_std
 
 %find_lang sp
 
 #remove unpackaged files
-rm -rf $RPM_BUILD_ROOT%{_prefix}/doc  $RPM_BUILD_ROOT%{_docdir}/OpenSP
+rm -rf %{buildroot}%{_prefix}/doc  %{buildroot}%{_docdir}/OpenSP
 
 %clean
-test "$RPM_BUILD_ROOT" = "/" || rm -rf "$RPM_BUILD_ROOT"
+test "%{buildroot}" = "/" || rm -rf "%{buildroot}"
 
 %if %mdkversion < 200900
 %post -n %{lib_name} -p /sbin/ldconfig
