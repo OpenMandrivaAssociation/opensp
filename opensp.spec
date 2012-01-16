@@ -63,12 +63,12 @@ and other functions useful for SGML/XML/DSSSL development.
 %install
 rm -rf "%{buildroot}"
 %makeinstall_std
-%find_lang sp
+%find_lang sp5
 
 #remove unpackaged files
 rm -rf %{buildroot}%{_prefix}/doc  %{buildroot}%{_docdir}/OpenSP
 
-%files -f sp.lang
+%files -f sp5.lang
 %doc doc/*.htm ABOUT-NLS AUTHORS COPYING ChangeLog NEWS README
 %{_bindir}/*
 %{sgmlbase}/%{name}-%{version}/*
