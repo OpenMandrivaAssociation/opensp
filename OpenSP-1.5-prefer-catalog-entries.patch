@@ -1,0 +1,11 @@
+--- OpenSP-1.5/lib/SOEntityCatalog.cxx.bak	2000-02-25 17:55:21.000000000 +0100
++++ OpenSP-1.5/lib/SOEntityCatalog.cxx	2006-04-08 10:55:10.409892000 +0200
+@@ -438,7 +438,7 @@
+     const CatalogEntry *publicEntry;
+     Boolean delegated;
+     publicEntry = findBestPublicEntry(*entity.publicIdPointer(),
+-				      entity.systemIdPointer() != 0,
++				      false,
+ 				      charset,
+ 				      delegated);
+     if (publicEntry && delegated)
