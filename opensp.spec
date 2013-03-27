@@ -17,6 +17,7 @@ Patch2:		opensp-1.5.2-nodeids.patch
 
 BuildRequires:	xmlto
 BuildRequires:	docbook-dtd412-xml
+BuildRequires:	gettext-devel
 %rename OpenSP
 
 %description
