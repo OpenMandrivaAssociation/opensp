@@ -9,14 +9,14 @@ Version:	1.5.2
 Release:	13
 License:	BSD
 Group:		Publishing
-URL:		http://openjade.sourceforge.net/
+Url:		http://openjade.sourceforge.net/
 Source0:	http://download.sourceforge.net/openjade/OpenSP-%{version}.tar.bz2
 Patch0:		OpenSP-1.5-prefer-catalog-entries.patch
 Patch1:		opensp-1.5.2-multilib.patch
 Patch2:		opensp-1.5.2-nodeids.patch
 
-BuildRequires:	xmlto
 BuildRequires:	docbook-dtd412-xml
+BuildRequires:	xmlto
 BuildRequires:	gettext-devel
 %rename OpenSP
 
@@ -37,7 +37,7 @@ other functions useful for SGML/XML/DSSSL development.
 %package -n %{devname}
 Summary:	Libraries and include files for developing OpenSP applications
 Group:		Development/C
-Requires:	%{libname} = %{version}
+Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 
 %description -n %{devname}
@@ -48,11 +48,11 @@ and other functions useful for SGML/XML/DSSSL development.
 %prep
 %setup -qn OpenSP-%{version}
 %apply_patches
-
-%build
 #fix build with new automake
 sed -i -e 's,AM_CONFIG_HEADER,AC_CONFIG_HEADERS,g' configure.*
 autoreconf -fi
+
+%build
 %configure2_5x \
 	--disable-static \
 	--enable-http \
