@@ -6,7 +6,7 @@
 Summary:	The OpenJade Group's SGML and XML parsing tools
 Name:		opensp
 Version:	1.5.2
-Release:	21
+Release:	22
 License:	BSD
 Group:		Publishing
 Url:		http://openjade.sourceforge.net/
