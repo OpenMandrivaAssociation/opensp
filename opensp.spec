@@ -6,7 +6,7 @@
 Summary:	The OpenJade Group's SGML and XML parsing tools
 Name:		opensp
 Version:	1.5.2
-Release:	26
+Release:	27
 License:	BSD
 Group:		Publishing
 Url:		http://openjade.sourceforge.net/
@@ -14,6 +14,8 @@ Source0:	http://download.sourceforge.net/openjade/OpenSP-%{version}.tar.bz2
 Patch0:		OpenSP-1.5-prefer-catalog-entries.patch
 Patch1:		opensp-1.5.2-multilib.patch
 Patch2:		opensp-1.5.2-nodeids.patch
+Patch3:		opensp-1.5.2-c11-using.patch
+Patch4:		opensp-1.5.2-fix-segfault.patch
 
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	xmlto
