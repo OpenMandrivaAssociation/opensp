@@ -9,7 +9,7 @@ Version:	1.5.2
 Release:	31
 License:	BSD
 Group:		Publishing
-Url:		http://openjade.sourceforge.net/
+Url:		https://openjade.sourceforge.net/
 Source0:	http://download.sourceforge.net/openjade/OpenSP-%{version}.tar.bz2
 Patch0:		OpenSP-1.5-prefer-catalog-entries.patch
 Patch1:		opensp-1.5.2-multilib.patch
