@@ -17,6 +17,11 @@ Patch2:		opensp-1.5.2-nodeids.patch
 Patch3:		opensp-1.5.2-c11-using.patch
 Patch4:		opensp-1.5.2-fix-segfault.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	xmlto
 BuildRequires:	gettext-devel
